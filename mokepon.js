@@ -85,18 +85,6 @@ function revisarVidas(){
     }
 }
 
-/*FUNCIÓN CREAR BOTON REINICIAR
-function crearBotonReiniciar(){
-    let seccionReiniciar = document.getElementById("reiniciar")
-    let botonReiniciar = document.createElement("button")
-
-    botonReiniciar.innerHTML = "Reiniciar"
-    seccionReiniciar.appendChild(botonReiniciar)
-    botonReiniciar.addEventListener("click",reiniciarJuego)
-
-    deshabilitarBotones()
-}*/
-
 function  deshabilitarBotones(){
     let botonFuego = document.getElementById("boton-fuego")
     botonFuego.disabled = true
