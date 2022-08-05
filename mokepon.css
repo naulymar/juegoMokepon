@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&family=Red+Hat+Display:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Mouse+Memoirs&family=Red+Hat+Display:wght@500&display=swap');
+
+:root{
+    --pineGreen: rgb(11, 122, 117);
+    --fondoTarjetas: #AC7088;
+    --dutchWhite: rgb(215, 201, 170);
+    --background: #5E6ABE;
+    --colorTitulo: #F08080;
+    
+    --background: #C33764;  /* fallback for old browsers */
+    --background: -webkit-linear-gradient(to top, #1D2671, #C33764);  /* Chrome 10-25, Safari 5.1-6 */
+    --backgroundTarjetas: linear-gradient(to top, #1D2671, #C33764); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    /*PARA LAS TARJETAS:HOVER */
+    --backgroundHover: linear-gradient(to bottom, #C6426E, #642B73); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+}
+
+
+*{
+    padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body{
+    background-color: var(--dutchWhite);
+    background-image: url(./img/background2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+#seleccionar-mascota{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    width: 900px;
+    height: 590px;
+    gap: 20px;
+    background: #211442;
+    border-radius: 20px;
+    box-shadow: 10px 20px 37px black ;
+}
+
+.titulo-h1{
+    color: var(--colorTitulo);
+    width: 700px;
+    height: 55px;
+    text-align: center;
+    font-family: 'Fredoka One';
+    border-radius: 30px;
+    font-size: 70px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.subtitulo{
+    font-family: 'Fredoka One';
+    color: var(--colorTitulo);
+    font-size: 30px;
+}
+
+.tarjetas{
+    display: flex;
+    gap: 10px;
+}
+
+
+.tarjeta-de-mokepon{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 210px;
+    height: 250px;
+    padding: 10px;
+    margin: 30px;
+    box-sizing: border-box;
+    text-align: center;
+    gap: 10px;
+
+    background: var(--backgroundTarjetas);
+    color: white;
+
+    font-family: 'Mouse Memoirs', sans-serif;
+    font-size: 40px;
+    
+    border: 1px solid white;
+    box-shadow: 10px 20px 37px black;
+    border-radius: 10px;
+    
+}
+
+.tarjeta-de-mokepon img{
+    width: 130px;
+}
+
+
+.tarjeta-de-mokepon:hover{
+    width: 220px;
+    height: 260px;
+    
+    box-shadow: 0 0 0 2px var(--backgroundHover), 0 0 0 3px var(--backgroundHover);
+    background: var(--backgroundTarjetas);
+    color: white;
+    
+    cursor: pointer;
+}
+
+input{
+    display: none;
+}
+
+input:checked+label{
+    width: 220px;
+    height: 260px;
+    
+    background: var(--background);
+    color: white;
+    box-shadow: 10px 20px 37px black;
+    
+    cursor: pointer;
+}
+
+#boton-mascota{
+    width: 150px;
+    background: transparent;
+    border: 1px solid white;
+    border-radius: 20px;
+    padding: 12px;
+    color: white;
+    box-shadow: 7px 13px 37px black;
+    font-family: 'Mouse Memoirs', sans-serif;
+    font-size: 40px;
+}
+
+#seleccionar-ataque{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    margin: 20px auto;
+    width: 900px;
+    height: fit-content;
+    gap: 20px;
+    
+    background: #211442;
+    border-radius: 20px;
+    box-shadow: 10px 20px 37px black ;
+
+}
+
+.boton-de-ataque{
+    width: 120px;
+    height: 50px;
+    background: var(--backgroundTarjetas);
+    color: white;
+
+    font-family: 'Mouse Memoirs', sans-serif;
+    font-size: 30px;
+    
+    border: 1px solid white;
+    box-shadow: 10px 20px 37px black;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.boton-de-ataque:hover{
+    width: 125px;
+    height: 55px;
+    box-shadow: 0 0 0 2px var(--backgroundHover), 0 0 0 3px var(--backgroundHover);
+    background: var(--backgroundTarjetas);
+    color: white;
+    box-shadow: 10px 20px 37px black;
+    cursor: pointer;
+}
+
+#mensajes{
+    width: 390px;
+    background-color: #C33764;
+    padding: 20px;
+    margin-top: 5px;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+    font-family: 'Mouse Memoirs', sans-serif;
+    font-size: 35px;
+}
+
+#boton-reiniciar{
+    width: 150px;
+    background: transparent;
+    border: 1px solid white;
+    border-radius: 20px;
+    margin: 20px 0px 10px 0px;
+    padding: 12px;
+    color: white;
+    box-shadow: 7px 13px 37px black;
+    font-family: 'Mouse Memoirs', sans-serif;
+    font-size: 40px;
+}
+
+.ataques{
+    display: grid;
+    grid-template-columns: 100px 100px;
+    margin: 5px;
+    gap: 150px;
+    align-items: center;
+}
+
+
+.jugador{
+    text-align: center;
+    justify-self: center;
+
+    width: 150px;
+    height: fit-content;
+
+    border-radius: 20px;
+    border: 1px solid white;
+    background: transparent;
+    box-shadow: 7px 13px 37px black;
+}
+
+.enemigo{
+    text-align: center;
+    justify-self: center;
+
+    width: 150px;
+    height: fit-content;
+
+    border-radius: 20px;
+    border: 1px solid white;
+    background: transparent;
+    box-shadow: 7px 13px 37px black;
+}
+
+#vidas-jugador,
+#vidas-enemigo{
+    color: white;
+    font-size: 30px;
+    font-family: 'Mouse Memoirs', sans-serif;
+}
+
+#mascota-jugador,
+#mascota-enemigo{
+    color: var(--colorTitulo);
+    font-size: 30px;
+    font-family: 'Mouse Memoirs', sans-serif;
+}
+
+#ataques-del-jugador,
+#ataques-del-enemigo{
+    color: white;
+    font-size: 30px;
+    font-family: 'Mouse Memoirs', sans-serif;
+}
