@@ -17,10 +17,16 @@ const seccionMensaje = document.getElementById("resultado")
 const botonReiniciar = document.getElementById("boton-reiniciar")
 const contenedorTarjetas = document.getElementById("contenedor-tarjetas")
 
+const mascotaEnemigoSeleccionada = document.getElementById("mascota-enemigo")
+const mascotaJugadorSeleccionada = document.getElementById("mascota-jugador")
+
 
 let mokepones = []
 let opcionDeMokepones
+//let MokeponSeleccionado
 let ataqueJugador
+let mascotaJugador
+let mascotaEnemigo
 let ataqueEnemigo
 let resultado
 let resultadoFinal
@@ -106,18 +112,24 @@ function seleccionarMascotaJugador(){
     
     if(inputHipodoge.checked){
         spanMascotaJugador.innerHTML = inputHipodoge.id
+        mascotaJugador = inputHipodoge.id
     }else if(inputCapipepo.checked){
         spanMascotaJugador.innerHTML = inputCapipepo.id
+        mascotaJugador = inputCapipepo.id
     }else if(inputRatigueya.checked){
         spanMascotaJugador.innerHTML = inputRatigueya.id
+        mascotaJugador = inputRatigueya.id
     }else{
         alert("selecciona una de las mascotas")
         jugar=0
     }
-
+    
+    //Mostrar mokepon una vez seleccionado
+    mostrarMokeponesJugador(mascotaJugador)
+    extraerAtaques(mascotaJugador)
+    
     if(jugar==1){
         seleccionarMascotaEnemigo()
-
         //Mostrar la sección seleccionar-ataque
         seccionSeleccionarAtaque.style.display = "flex"
 
@@ -126,16 +138,43 @@ function seleccionarMascotaJugador(){
     }
 }
 
+function extraerAtaques(mascotaJugador){
+    let ataque
+    for(let i = 0; i < mokepones.length; i++){
+        if(mascotaJugador === mokepones[i].nombre){
+            ataque = mokepones[i].ataques
+        }
+    }
+    mostrarAtaques()
+}
+
+function mostrarAtaques(){
+    
+}
+
 function seleccionarMascotaEnemigo(){
     let mascotaAleatoria = aleatorio(0,mokepones.length - 1)
 
-    if(mascotaAleatoria==1){
-        spanMascotaEnemigo.innerHTML="Hipodoge"
-    }else if(mascotaAleatoria==2){
-        spanMascotaEnemigo.innerHTML="Capipepo"
-    }else {
-        spanMascotaEnemigo.innerHTML="Ratigueya"
-    }
+    spanMascotaEnemigo.innerHTML = mokepones[mascotaAleatoria].nombre
+    mascotaEnemigo = mokepones[mascotaAleatoria].nombre
+
+    mostrarMokeponesEnemigo(mascotaEnemigo)
+}
+
+function mostrarMokeponesEnemigo(MokeponSeleccionado){
+    mokepones.forEach(mokepon=>{
+        if(MokeponSeleccionado==mokepon.nombre){
+            spanMascotaEnemigo.innerHTML=`<img src=${mokepon.foto} alt=${mokepon.nombre}></img>`
+        }
+    }) 
+}
+
+function mostrarMokeponesJugador(MokeponSeleccionado){
+    mokepones.forEach(mokepon=>{
+        if(MokeponSeleccionado==mokepon.nombre){
+            spanMascotaJugador.innerHTML=`<img src=${mokepon.foto} alt=${mokepon.nombre}></img>`
+        }
+    }) 
 }
 
 function ataqueFuego(){
