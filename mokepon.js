@@ -5,15 +5,17 @@ const botonFuego = document.getElementById("boton-fuego")
 const botonAgua = document.getElementById("boton-agua")
 const botonTierra = document.getElementById("boton-tierra")
 
-const spanMascotaJugador = document.getElementById("mascota-jugador")
-const seccionSeleccionarMascota = document.getElementById("seleccionar-mascota")
 
+const seccionSeleccionarMascota = document.getElementById("seleccionar-mascota")
+const seccionMensaje = document.getElementById("resultado")
+
+const spanMascotaJugador = document.getElementById("mascota-jugador")
 const spanMascotaEnemigo = document.getElementById("mascota-enemigo")
 const spanVidasJugador = document.getElementById("vidas-jugador")
 const spanVidasEnemigo = document.getElementById("vidas-enemigo")
+
 const ataquesDelJugador = document.getElementById('ataques-del-jugador')
 const ataquesDelEnemigo = document.getElementById('ataques-del-enemigo')
-const seccionMensaje = document.getElementById("resultado")
 const botonReiniciar = document.getElementById("boton-reiniciar")
 const contenedorTarjetas = document.getElementById("contenedor-tarjetas")
 
@@ -23,7 +25,6 @@ const mascotaJugadorSeleccionada = document.getElementById("mascota-jugador")
 
 let mokepones = []
 let opcionDeMokepones
-//let MokeponSeleccionado
 let ataqueJugador
 let mascotaJugador
 let mascotaEnemigo
