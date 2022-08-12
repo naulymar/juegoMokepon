@@ -263,11 +263,17 @@ function  deshabilitarBotones(){
     habilitarSeccionReiniciar()
 }
 
+/**
+ * When the user clicks the button, the game restarts.
+ */
 function habilitarSeccionReiniciar(){
     seccionReiniciar.style.display = "block" 
     botonReiniciar.addEventListener("click",reiniciarJuego)
 }
 
+/**
+ * The function is called 'reiniciarJuego' and it reloads the page.
+ */
 function reiniciarJuego(){
     location.reload()
 }
